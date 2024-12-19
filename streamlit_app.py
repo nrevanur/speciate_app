@@ -15,11 +15,11 @@ class ChatApplication:
         http_api_url = "https://"+env_prefix+domain_suffix ;
         ws_api_url = "ws://"+env_prefix+domain_suffix ;
         
-        self.config_connect_url=_http_api_url+"/v1/configs/"
+        self.config_connect_url=http_api_url+"/v1/configs/"
         self.chat_connect_url=ws_api_url+"/v1/chat-agents/chat-message"
         print("config_connect_url:" + self.config_connect_url)
         print("chat_connect_url:" + self.chat_connect_url)
-        
+
         if "messages" not in st.session_state:
             st.session_state.messages = [
                 {'role': "user", "content": ""},
