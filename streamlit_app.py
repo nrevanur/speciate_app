@@ -7,7 +7,7 @@ import requests
 import streamlit as st
 
 class Config:
-    BASE_URL = f"{os.getenv('ENV', 'prod')}.api.speciate.com"
+    BASE_URL = os.getenv("ENV", "prod") == "prod" ? "api.speciate.com" : "dev.api.speciate.com"
     CONFIG_URL = f"https://{BASE_URL}/v1/configs/"
     CHAT_URL = f"wss://{BASE_URL}/v1/chat-agents/chat-message"
 
