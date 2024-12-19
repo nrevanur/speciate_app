@@ -4,15 +4,13 @@ import requests
 import json
 import os
 
-from python_lib.llms.prompts import STATIC_COHERENCE_PROMPT
-
 class ChatApplication:
     def __init__(self):        
         print()
         self.user_email = "admin@speciate.com"
         self.stream_resposnse_flag = True
         domain_suffix = ".api.speciate.com"
-        env_prefix = os.getenv('ENV', "prod")
+        env_prefix = os.getenv('ENV', "dev")
         api_url = "https://"+env_prefix+domain_suffix ;
         self.config_connect_url=api_url+"/v1/configs"
         self.chat_connect_url=api_url+"/v1/chat-agents/chat-message"
@@ -20,7 +18,7 @@ class ChatApplication:
         print("chat_connect_url:" + self.chat_connect_url)
         if "messages" not in st.session_state:
             st.session_state.messages = [
-                {'role': "user", "content": STATIC_COHERENCE_PROMPT},
+                {'role': "user", "content": ""},
                 {'role': "assistant", "content": "Understood"},
             ]
 
