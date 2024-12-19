@@ -13,7 +13,7 @@ class ChatApplication:
         domain_suffix = ".api.speciate.com"
         env_prefix = os.getenv('ENV', "dev")
         http_api_url = "https://"+env_prefix+domain_suffix ;
-        ws_api_url = "ws://"+env_prefix+domain_suffix ;
+        ws_api_url = "wss://"+env_prefix+domain_suffix ;
         
         self.config_connect_url=http_api_url+"/v1/configs/"
         self.chat_connect_url=ws_api_url+"/v1/chat-agents/chat-message"
