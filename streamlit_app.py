@@ -12,7 +12,7 @@ class ChatApplication:
         domain_suffix = ".api.speciate.com"
         env_prefix = os.getenv('ENV', "dev")
         api_url = "https://"+env_prefix+domain_suffix ;
-        self.config_connect_url=api_url+"/v1/configs"
+        self.config_connect_url=api_url+"/v1/configs/"
         self.chat_connect_url=api_url+"/v1/chat-agents/chat-message"
         print("config_connect_url:" + self.config_connect_url)
         print("chat_connect_url:" + self.chat_connect_url)
