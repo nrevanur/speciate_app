@@ -11,9 +11,10 @@ class ChatApplication:
         self.stream_resposnse_flag = True
         domain_suffix = ".api.speciate.com"
         env_prefix = os.getenv('ENV', "dev")
-        api_url = "https://"+env_prefix+domain_suffix ;
-        self.config_connect_url=api_url+"/v1/configs/"
-        self.chat_connect_url=api_url+"/v1/chat-agents/chat-message"
+        http_api_url = "https://"+env_prefix+domain_suffix ;
+        ws_api_url = "ws://"+env_prefix+domain_suffix ;
+        self.config_connect_url=_http_api_url+"/v1/configs/"
+        self.chat_connect_url=ws_api_url+"/v1/chat-agents/chat-message"
         print("config_connect_url:" + self.config_connect_url)
         print("chat_connect_url:" + self.chat_connect_url)
         if "messages" not in st.session_state:
